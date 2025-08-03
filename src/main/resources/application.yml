@@ -8,5 +8,11 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:8080/realms/ShanRealm
+          issuer-uri: http://localhost:8080/realms/shanrealm2
           jwt-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
+
+jwt:
+  auth:
+    converter:
+      resource-id: shan-rest-api-2
+      principle-attribute: preferred_username

@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/keycloak")
 public class KeycloakController {
     @GetMapping
-    //@PreAuthorize("hasRole('client-user')")
-    public String hello() {
-        return "Hello from keycloak";
+    @PreAuthorize("hasRole('client_user_2')")
+    public String helloFromUser() {
+        return "Hello from user-keycloak";
     }
 
     @GetMapping("/admin")
-    //@PreAuthorize("hasRole('client-admin')")
+    @PreAuthorize("hasRole('client_admin_2')")
     public String helloFromAdmin() {
         return "Hello from admin-keycloak";
     }
